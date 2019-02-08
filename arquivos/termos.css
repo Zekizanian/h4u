@@ -1,46 +1,52 @@
-#termos {
+#termos, #newsletter-check {
     display: block;
-    HEIGHT: 30px;
+    height: 30px;
     width: 315px;
     position: absolute;
-}
-    #termos * {
-        display: inline-block;
-        vertical-align: top;
-    }
-    #termos input {
-        margin-top: 0;
-        display: none;
-    }
-    #termos label {
-        width:12px;
-        height:12px; 
-        background-color: #fff;
-        border: 1px solid #aaaaaa;
-        position: relative;
-        cursor:pointer;
-    }
-    #termos input[type="checkbox"] +label {
-        content: none;
-    }
-    #termos input[type="checkbox"]:checked + label:before{
-        content: "";
-        display: block;
-        background-color: #3cdbc0;
-        margin: 1px;
-        width: 8px;
-        height: 8px; 
-    }
-    #termos label:after{
-        display: block;
-        width:8px;
-        height:8px; 
-        background-color: #3cdbc0;
-    }
-    #termos span {
-        color: #9c9c9c;
-        font-size: 10.5px;
-    }
-        #termos span a {
-            color: #3cdbc0;
-        }
+    bottom: 0;
+  }
+  #termos *, #newsletter-check * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #termos input, #newsletter-check input {
+    margin-top: 0;
+    display: none;
+  }
+  #termos label, #newsletter-check label {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    position: relative;
+    cursor: pointer;
+    margin-right:5px;
+  }
+  #termos input[type="checkbox"] + label, #newsletter-check input[type="checkbox"] + label {
+    content: none;
+  }
+  #termos input[type="checkbox"]:checked + label:before, #newsletter-check input[type="checkbox"]:checked + label:before {
+    content: "";
+    display: block;
+    background-color: #3cdbc0;
+    margin: 1px;
+    width: 8px;
+    height: 8px;
+  }
+  #termos label:after, #newsletter-check label:after {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #3cdbc0;
+  }
+  #termos span, #newsletter-check span {
+    color: #9c9c9c;
+    font-size: 10.5px;
+    padding-top: 2px;
+    letter-spacing: 0.3px;
+  }
+  #termos span a, #newsletter-check span a {
+    color: #3cdbc0;
+    font-size: 13.5px;
+  }
+  

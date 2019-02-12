@@ -121,3 +121,6 @@
 .body-order-form #termos {
 	margin-top: 10px;
 }
+.container-cart .cart-items td{
+  color: #3cdbc0!important;
+}

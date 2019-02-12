@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 .ir,
 .visuallyhidden {
 	overflow: hidden;
@@ -1882,7 +1883,7 @@ a {
 [disabled].newsletter-button-back,
 [disabled].newsletter-button-ok {
 	color: #fff;
-	background: #3b80ff
+	background: #84e8d7;
 }
 
 .account .tabs .fakeSelect,
@@ -9053,8 +9054,10 @@ body.orders {
   #termos span, #newsletter-check span {
     color: #9c9c9c;
     font-size: 10.5px;
-    padding-top: 2px;
+    padding-left:5px;
     letter-spacing: 0.3px;
+    max-width: 295px;
+    line-height: 1.3;
   }
   #termos span a, #newsletter-check span a {
 	color: #3cdbc0;
@@ -9064,8 +9067,67 @@ body.orders {
 .vtexid-password-requirements #termos,
 .vtexid-password-requirements #newsletter-check{
 	position:static; 
-	height: 20px;
+	height: 30px;
 }
 .vtexid-password-requirements #termos {
 	margin-top: 10px;
 }
+.vtexIdUI .btn-success:hover,
+.vtexIdUI .btn-success:focus,
+.vtexIdUI .btn-success:active,
+.vtexIdUI .btn-success.active,
+.vtexIdUI .btn-success.disabled,
+.vtexIdUI .btn-success[disabled]{
+	background-color: #84e8d7 !important;
+}
+.vtexIdUI .btn-success {
+	color: #ffffff;
+    text-shadow: none!important;
+    background-color: #3cdbc0!important;
+    background-image: none!important;
+    background-repeat: none!important;
+	border-right: 2px solid #31b49e!important;
+	border-bottom: 2px solid #31b49e!important;
+	border-radius: 0px!important;
+	box-shadow: none!important;
+}
+.vtexIdUI .vtexId-link, .vtexIdUI a {
+	color: #3cdbc0!important;
+}
+.vtexIdUI .vtexIdUI-classic-login-control input,
+.vtexIdUI .vtexIdUI-change-pswd input,
+.vtexIdUI .vtexIdUI-change-exp-pswd input {
+	border-radius: 0px!important;
+}
+.vtexIdUI .modal-header {
+	background: #fff;
+}
+.vtexIdUI h4 {
+	line-height: 10px!important;
+}
+.vtexIdUI-heading {
+	color:#9c9c9b!important;
+	font-size: 0px!important;
+}
+.vtexIdUI-heading:before{
+    font-size: 22px;
+    color: #142032;
+    margin-top: 35px;
+    display: block;
+}
+span[data-i18n='vtexid.confirmChangePswdText']{
+	font-size: 0!important;
+}
+span[data-i18n='vtexid.confirmChangePswdText']:before{
+	content: '\f023';
+	font-family: 'FontAwesome', sans-serif;
+	font-size: 14px;
+}
+span[data-i18n='vtexid.confirmChangePswdText']:after{
+	content:"Receberá posteriormente por email um código de confirmação";
+	font-size: 14px;
+}
+#chk-error{
+	font-size:11px;
+	color: #cf6e6e;
+}  

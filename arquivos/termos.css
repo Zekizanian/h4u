@@ -56,4 +56,7 @@
     color: #cf6e6e;
   }  
 
-  
+  #termos #chk-error {
+    position: absolute;
+    top:-50px;
+  }

@@ -9055,7 +9055,7 @@ body.orders {
     color: #9c9c9c;
     font-size: 10.5px;
     padding-left:5px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     max-width: 295px;
     line-height: 1.3;
   }
@@ -9130,4 +9130,10 @@ span[data-i18n='vtexid.confirmChangePswdText']:after{
 #chk-error{
 	font-size:11px;
 	color: #cf6e6e;
+	line-height:1;
 }  
+
+#modal-body + #chk-error {
+	width: 80%;
+	padding-left:15px;
+}

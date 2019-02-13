@@ -121,6 +121,46 @@
 .body-order-form #termos {
 	margin-top: 10px;
 }
-.container-cart .cart-items td{
+.container-cart .cart-items td,
+.icon-remove:before{
   color: #3cdbc0!important;
+}
+.icon-plus-sign:after, .icon-plus-sign:before,
+.icon-minus-sign:before {
+  background: #3cdbc0!important;
+}
+
+
+p.newsletter input {
+  display: none;
+}
+p.newsletter label {
+  width: 12px;
+  min-width: 0;
+  height: 12px;
+  min-height: 0;
+  padding: 0;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  position: relative;
+  cursor: pointer;
+  margin-right: 5px;
+}
+p.newsletter input[type="checkbox"] + label {
+  content: none;
+}
+p.newsletter input[type="checkbox"]:checked + label:before {
+  content: "";
+  display: block;
+  background-color: #3cdbc0;
+  margin: 1px;
+  width: 8px;
+  height: 8px;
+}
+p.newsletter label:after {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #3cdbc0;
 }

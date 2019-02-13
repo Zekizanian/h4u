@@ -33,12 +33,30 @@ $(document).ready(function(){
     autorizaNewsletter($('#aceito-termos'),$('.newsletter-button-ok'));
 })
 $(document).on('change', '#aceito-termos', function(){
-    console.log('fora da autoriza news');
-    console.log($('.newsletter fieldset'));
     autorizaNewsletter($('#aceito-termos'),$('.newsletter-button-ok'));
 });
 
 function autorizaNewsletter(idCheck,idBotao) {
+    function localidade(fonte){
+        if(fonte[0].localName == "fieldset"){
+            fonte.find('p')
+            .first()
+            .hide();
+            if ($('#chk-error').length==0){
+                fonte.prepend('<div id="chk-error">'+
+                '<span> Por favor leia e aceite a Política '+
+                'de Privacidade da Health For You antes de avançar.</span>'+
+                '</div>')
+            }
+        }else if(fonte[0].localName == "div"){
+            if ($('#chk-error').length == 0){
+                $('#newsletter-check').append('<div id="chk-error">'+
+                '<span> Por favor leia e aceite as Condições Gerais e a Política '+
+                'de Privacidade da Health For You antes de avançar.</span>'+
+                '</div>')
+            }
+        }
+    }
     var fonte = idBotao.parent();
     if(idCheck.is(':checked') == false){
         idBotao.prop('disabled', true)
@@ -46,7 +64,7 @@ function autorizaNewsletter(idCheck,idBotao) {
         $('#chk-error').show();
         fonte.off('click');
         fonte.on('click', function(e){
-            console.log('click!!!');
+            localidade(fonte);
         })
         fonte.children().off('click');
         fonte.children().on('click', function(e){
@@ -56,10 +74,12 @@ function autorizaNewsletter(idCheck,idBotao) {
         idBotao.prop('disabled', false)
         .removeAttr('style');
         $('#chk-error').hide();
-        
+        fonte.find('#chk-error').remove();
+        fonte.find('p').show();
         fonte.off('click');
         fonte.children().off('click');
     }
+    
 } 
 
 

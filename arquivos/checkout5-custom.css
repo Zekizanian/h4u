@@ -1,3 +1,7 @@
+a:hover, a:focus{
+  color:#3CDBC0;
+}
+
 #btn-add-gift-card:active,
 #btn-add-gift-card:focus,
 #btn-add-gift-card:hover,
@@ -9,9 +13,14 @@
 .body-order-placed #order-continue-shopping:hover,
 .btn-success:active,
 .btn-success:focus,
-.btn-success:hover{
+.btn-success:hover,
+.body-order-placed [disabled]#order-continue-shopping,
+[disabled]#btn-add-gift-card,
+[disabled]#cart-coupon-add,
+[disabled].btn-success{
     background: #84e8d7;
 }
+
 .active#btn-add-gift-card,
 .active#cart-coupon-add,
 .active.btn-success,
@@ -20,7 +29,7 @@
 #cart-coupon-add,
 .body-order-placed #order-continue-shopping,
 .btn-success{
-    background: #3cdbc0;
+    background: #3cdbc0!important;
     border-right:2px solid #31b49e;
     border-bottom:2px solid #31b49e;
 }
@@ -58,7 +67,9 @@
 
 .btn-small [class^="icon-"], .btn-small [class*=" icon-"]{display: none;}
 
-
+.cart-fixed .summary-cart-template-holder {
+  min-height: 100px;
+}
 
 
 #termos, #newsletter-check {
@@ -106,7 +117,7 @@
     color: #9c9c9c;
     font-size: 10.5px;
     padding-top: 2px;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.1px;
   }
   #termos span a, #newsletter-check span a {
     color: #3cdbc0;
@@ -130,7 +141,9 @@
   background: #3cdbc0!important;
 }
 
-
+form.form-step p.newsletter {
+  padding-bottom: 5px!important;
+}
 p.newsletter input {
   display: none;
 }
@@ -145,7 +158,7 @@ p.newsletter label {
   border: 1px solid #aaa;
   position: relative;
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 p.newsletter input[type="checkbox"] + label {
   content: none;
@@ -163,4 +176,48 @@ p.newsletter label:after {
   width: 8px;
   height: 8px;
   background-color: #3cdbc0;
+}
+p.newsletter span {
+  color: #9c9c9c;
+  font-size: 10.5px;
+  padding-top: 2px;
+  letter-spacing: 0.1px;
+}
+::-moz-selection {
+	background: #3cdbc0;
+	color: #fff;
+	text-shadow: none
+}
+
+::selection {
+	background: #3cdbc0;
+	color: #fff;
+	text-shadow: none
+}
+.full-cart .summary-totalizers .cart-reset-postal-code {
+  color: #3cdbc0;
+}
+table.cart-gift-items{
+  margin-bottom: 20px;
+}
+.forms.coupon-column{
+  float: none!important;
+  display: inline-block;
+}
+.icon-check-sign, .icon-check-empty {
+  top: calc(50% - 10px);
+}
+#chk-error{
+  font-size:11px;
+  color: #cf6e6e;
+}  
+
+#termos #chk-error {
+  position: absolute;
+  top:-50px;
+}
+
+
+.accordion-group.shipping-data .btn-go-to-payment-wrapper{
+  display: block!important;
 }

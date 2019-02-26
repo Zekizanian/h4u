@@ -35,7 +35,26 @@ $(document).ready(function(){
 $(document).on('change', '#aceito-termos', function(){
     autorizaNewsletter($('#aceito-termos'),$('.newsletter-button-ok'));
 });
-
+$(document).ajaxSuccess(function(event,xhr,options){
+    var clientEmail = $('#appendedInputButton[type="email"]').val();
+    if(options.url.indexOf('https://edolportugal.myvtex.com/api/vtexid/pub/authentication/classic/setpassword') != -1){
+        xhr.success(function(response){
+            if(response.authStatus == "Success"){
+                $.ajax({
+                    url:"/api/dataentities/CL/documents",
+                    type: "PATCH",
+                    //"timeout": 0,
+                    accept: 'application/vnd.vtex.ds.v10+json',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify({
+                        email: clientEmail,
+                        privacyPolicyAgreed:true
+                    })
+                })
+            }
+        });
+    }
+})
 function autorizaNewsletter(idCheck,idBotao) {
     function localidade(fonte){
         if(fonte[0].localName == "fieldset"){
@@ -74,7 +93,7 @@ function autorizaNewsletter(idCheck,idBotao) {
         idBotao.prop('disabled', false)
         .removeAttr('style');
         $('#chk-error').hide();
-        fonte.find('#chk-error').remove();
+        $('#chk-error').remove();
         fonte.find('p').show();
         fonte.off('click');
         fonte.children().off('click');

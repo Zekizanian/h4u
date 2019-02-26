@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+
+<head>
+    <vtex:template id="EDOLPORTUGAL - includes-header" />
+</head>
+
+<body>
+    <div id="global">
+        <vtex:template id="EDOLPORTUGAL - header" />
+        <div class="tabs">
+            <ul class="tabs__controls">
+                <li class="tabs__controls--item" data-target="account">O Meu Perfil</li>
+                <li class="tabs__controls--item" data-target="orders">As Minhas Encomendas</li>
+            </ul>
+            <a href="/no-cache/user/logout" class="logout">Sair</a>
+            <div class="tabs__wrapper">
+                <div class="tabs__item account">
+                    <div class="tabs__item--user-info">
+                        <vtex.cmc:accountUserProfile />
+                        <div class="control-group form-contact-data-newsletter span">
+                            <h5 class="span5">Gestão e Permissões</h5>
+                            <label for="" class="control-label">Desejo receber todas as novidades e descontos por email?</label>
+                            <div class="controls">
+                                <label for="" class="radio">
+                                    <input type="radio" class="aceita" name="aceitaNews"/>
+                                    sim
+                                </label>
+                                <label for="" class="radio">
+                                    <input type="radio" class="naoaceita" name="aceitaNews"/>
+                                    não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__item--address">
+                        <vtex.cmc:accountAddress/>
+                    </div>
+                </div>
+                <div class="tabs__item orders">
+                    <vtex.cmc:orderList/>
+                </div>
+            </div>
+        </div>
+        <vtex:template id="EDOLPORTUGAL - footer" />
+    </div>
+
+    <vtex:template id="EDOLPORTUGAL - includes-scripts" />
+    <script src="/arquivos/ajuste-account.js?v=01"></script>
+</body>
+</html>

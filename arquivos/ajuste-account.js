@@ -1,23 +1,37 @@
 $(document).ready(function(){
-    var clientEmail = $('p.welcome').html().split('Olá')[1].split('.<em>')[0];
-    $('#editar-perfil-conteudo').prependTo(".tabs__item--user-info");
-    $('#editar-perfil-conteudo .form-contact-data-cellphone').after($('.tabs__item--user-info .form-contact-data-newsletter'));
-    $.ajax({
-        url:'/api/dataentities/CL/search?_fields=email,privacyPolicyAgreed,isNewsletterOptIn&_where=email=' + clientEmail ,
-        type:'GET'
-    }).success(function(response){
-        console.log(response);
-        if(response[0].privacyPolicyAgreed){
-            $('label.radio .aceita').prop('checked', true);
-            $('label.radio .naoaceita').prop('checked', false);
+    $.get("/no-cache/profileSystem/getProfile", function(data){
+
+        if(data.IsUserDefined) {
+            $.ajax({
+                url:'/api/dataentities/CL/search?_fields=email,privacyPolicyAgreed,isNewsletterOptIn&_where=email=' + data.Email ,
+                type:'GET'
+            }).success(function(response){
+                console.log(response);
+                if(response[0].privacyPolicyAgreed){
+                    $('label.radio .aceita').prop('checked', true);
+                    $('label.radio .naoaceita').prop('checked', false);
+                }else{
+                    $('label.radio .naoaceita').prop('checked', true);
+                    $('label.radio .aceita').prop('checked', false);
+                }
+            });
+
         }else{
-            $('label.radio .naoaceita').prop('checked', true);
-            $('label.radio .aceita').prop('checked', false);
+            $('.mobile-only p.welcome').html('<span>Bem-vindo à HEALTH FOR YOU!</span><a href="/login"> INICIAR SESSÃO</a>');
         }
     });
+    
     $(document).on('click', '#profile-submit',function(){
         mudaPermicao(clientEmail ,$('label.radio .aceita').is(':checked'))
     });
+
+    if($('body').hasClass('account')){
+        $(document).on('click','a[data-toggle="modal"]', function(){
+            $('.modal.hide.fade').addClass('show');
+        });
+        $('#editar-perfil-conteudo').prependTo('.tabs__item--user-info');
+        $('.form-contact-data-newsletter').appendTo('.profile-detail-form-contact-data');
+    }
 });
 function mudaPermicao(email, bool){
     $.ajax({

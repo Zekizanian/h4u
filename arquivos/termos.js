@@ -30,10 +30,10 @@ $(document).ready(function(){
         })
     }
     //termos newsletter
-    autorizaNewsletter($('#aceito-termos'),$('.newsletter-button-ok'));
+    autorizaNewsletter($('input[id^=aceito-termos]'),$('.newsletter-button-ok'));
 })
-$(document).on('change', '#aceito-termos', function(){
-    autorizaNewsletter($('#aceito-termos'),$('.newsletter-button-ok'));
+$(document).on('change', 'input[id^=aceito-termos]', function(){
+    autorizaNewsletter($('input[id^=aceito-termos]'),$('.newsletter-button-ok'));
 });
 $(document).ajaxSuccess(function(event,xhr,options){
     var clientEmail = $('#appendedInputButton[type="email"]').val();

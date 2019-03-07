@@ -18,7 +18,7 @@ ul {
 	visibility: hidden
 }
 a:hover, a:focus {
-	text-decoration:none;
+	text-decoration:none!important;
 }
 @font-face {
 	font-family: xerox;
@@ -1933,7 +1933,8 @@ a {
 .account .tabs .fakeSelect__title a,
 .categorias .page-content .catalog-results .sub .fakeSelect__title a,
 .produto .product__info--skuSelection .topic .specification a {
-	display: block
+	display: block;
+	color:#3cdbc0;
 }
 
 .categorias .page-content .catalog-results .sub .fakeSelect__arrow,
@@ -3169,6 +3170,9 @@ a {
     font-weight: 700;
     font-size: 0;
 }
+p.alert{
+	font-size: 12px;
+}
 #vtexIdContainer .vtexIdUI #vtexIdUI-email-confirmation .modal-header h4 span.vtexIdUI-heading:before {
 	content: "POR FAVOR INDIQUE SEU E-MAIL";
 	font-family: "Roboto Condensed";
@@ -3177,6 +3181,7 @@ a {
 	font-size: 1.5rem;
 	color: #142032;
 	text-align: left;
+	line-height: normal;
 }
 
 .institucional .accordion-control i {
@@ -3402,7 +3407,9 @@ a {
 #vtexIdContainer .vtexIdUI #vtexIdUI-email-confirmation .modal-body {
 	padding: 0 20px;
 }
-
+#vtexIdContainer .vtexIdUI .modal-body .info-why.muted {
+	margin-bottom:10px;
+}
 #vtexIdContainer .vtexIdUI #vtexIdUI-email-confirmation .modal-body .info-code {
 	text-align: left
 }
@@ -3551,7 +3558,8 @@ a {
 	font-family: "Roboto Condensed";
 	color: #142032;
 	font-size: 24px;
-	font-size: 1.5rem
+	font-size: 1.5rem;
+	line-height:normal;
 }
 
 #vtexIdContainer .vtexIdUI #vtexIdUI-classic-login .modal-body {
@@ -3596,12 +3604,17 @@ a {
 #vtexIdContainer .vtexIdUI #vtexIdUI-classic-login .modal-body label[for=inputPassword] .dead-link:before {
 	content: 'Esqueci-me da password';
 	font-size: 13px;
-	font-size: .8125rem
+	font-size: .8125rem;
+	display: block;
+	margin-top: -5px;
 }
 
 #vtexIdContainer .vtexIdUI #vtexIdUI-classic-login .modal-body .dead-link {
 	font-size: 0;
-	height: 15px
+	height: 15px;
+	text-align: right;
+    display: block;
+    width: 100%;
 }
 
 #vtexIdContainer .vtexIdUI #vtexIdUI-classic-login .modal-body .dead-link:before {
@@ -5305,7 +5318,7 @@ body div h2 {
 	.footer__box.open .footer__content {
 		background-color: transparent;
 		display: block;
-		padding: 0 20px 25px
+		padding: 0 20px 25px;
 	}
 	.footer__box.open .footer__title {
 		font-size: 18px;
@@ -5351,7 +5364,16 @@ body div h2 {
 		position: static;
 		margin-top: 20px
 	}
-	
+	#newsletterClientEmail{
+		width: 79%;
+	}
+	#termos, #newsletter-check{
+		margin-top: 10px;
+		width: 280px;
+	}
+	#termos span, #newsletter-check span {
+		max-width: 260px!important;
+	}
 
 }
 
@@ -7791,6 +7813,7 @@ body div h2 {
 		width: 100%;
 		clear: both
 	}
+	
 }
 
 @media screen and (max-width:736px) {
@@ -7816,6 +7839,9 @@ body div h2 {
 	.institucional .main-page .contato-form-wrapper .grp-field.grp-cel .field-tel,
 	.institucional .main-page .contato-form-wrapper .grp-field.grp-tel .field-tel {
 		width: 100%
+	}
+	#vtexIdContainer .vtexIdUI #vtexIdUI-classic-login .modal-body {
+		padding:0 10px;
 	}
 }
 
@@ -7926,7 +7952,8 @@ body.account {
 .account .tabs__item--user-info .modal-body h5 {
 	font-size: 18px;
 	font-size: 1.125rem;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	margin-left:0;
 }
 
 .account .tabs__item--user-info .modal-body .control-group {
@@ -8007,7 +8034,8 @@ body.account {
 }
 
 .account .tabs__item--address .new-address-link .address-update {
-	font-size: 0
+	font-size: 0;
+	color: #3cdbc0;
 }
 
 .account .tabs__item--address .new-address-link .address-update::before {
@@ -8324,7 +8352,12 @@ body.account {
 .account #address-edit .modal-footer .btn-primary {
 	color: #fff;
 	background-color: #000;
-	left: 166px
+	left: 166px;
+	background-image:none;
+	background-color:#3cdbc0;
+	line-height: normal;
+	left: 55%;
+	border-radius: 0px;
 }
 
 .account #address-edit .modal-footer .btn-primary:hover {
@@ -8334,7 +8367,7 @@ body.account {
 .account #address-edit .modal-footer .btn-link {
 	color: #000;
 	background-color: #fff;
-	left: 30px
+	right: 55%;
 }
 
 .account #address-edit .modal-footer .btn-link:hover {
@@ -8417,18 +8450,31 @@ body.account {
 }
 
 @media screen and (max-width:736px) {
-	width: 78%;
 	.account .tabs__controls--item {
-		width: 40%
+		width: 40%;
+		line-height: normal;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.account .tabs__controls--item:first-child{
+		padding-top: 15px;
+	}
+	.account .tabs__controls--item:last-child{
+		padding-top: 7.5px;
 	}
 	.account .tabs__item--address,
 	.account .tabs__item--user-info {
 		display: block;
 		width: 100%;
-		padding: 30px 10px
+		padding: 30px 10px;
 	}
 	.account .tabs__item--user-info {
-		border-bottom: 20px solid #f0f0f0
+		border-bottom: 20px solid #f0f0f0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.account .tabs__item--user-info .modal-body{
+		padding: 0;
 	}
 	.account .tabs .logout {
 		margin: 4px 11px 0 0
@@ -9175,13 +9221,15 @@ body.orders {
     background-color: #3cdbc0;
     margin: 1px;
     width: 8px;
-    height: 8px;
+	height: 8px;
+	font-family: arial;
   }
   #termos label:after, #newsletter-check label:after {
     display: block;
     width: 8px;
     height: 8px;
-    background-color: #3cdbc0;
+	background-color: #3cdbc0;
+	font-family: arial;
   }
   #termos span, #newsletter-check span {
     color: #9c9c9c;

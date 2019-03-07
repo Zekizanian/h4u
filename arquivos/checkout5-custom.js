@@ -18,6 +18,10 @@ $(document).ajaxSuccess(function(event,xhr,settings){
     if($('.newsletter-label > span.newsletter-text').length > 0){
         $('.newsletter-label > span.newsletter-text').insertAfter($('.newsletter-label'))
     }
+    if($('.newsletter-label > input').length > 0){
+        $('.newsletter-label').attr('for', 'opt-in-newsletter');
+        $('.newsletter-label > input').insertBefore($('.newsletter-label'));
+    }
     
     
 });

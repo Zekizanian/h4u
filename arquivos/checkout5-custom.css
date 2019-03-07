@@ -71,6 +71,9 @@ a:hover, a:focus{
   min-height: 100px;
 }
 
+.container-cart .cart-items .product-item.hide {
+  display: block;
+}
 
 #termos, #newsletter-check {
     display: block;
@@ -170,12 +173,14 @@ p.newsletter input[type="checkbox"]:checked + label:before {
   margin: 1px;
   width: 8px;
   height: 8px;
+  font-family: arial;
 }
 p.newsletter label:after {
   display: block;
   width: 8px;
   height: 8px;
   background-color: #3cdbc0;
+  font-family: arial;
 }
 p.newsletter span {
   color: #9c9c9c;
@@ -220,4 +225,18 @@ table.cart-gift-items{
 
 .accordion-group.shipping-data .btn-go-to-payment-wrapper{
   display: block!important;
+}
+@media screen and (max-width:736px) {
+  .cart-items .product-price {
+    position: static;
+  }
+  .new-product-price{
+    position: absolute;
+    right: 20px;
+    width: 100px;
+    bottom: 18px;
+  }
+  .container-cart .cart-items td.item-remove .item-link-remove {
+    padding-top: 0;
+  }
 }

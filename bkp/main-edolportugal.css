@@ -8285,7 +8285,6 @@ body.account {
 }
 
 @media screen and (max-width: 736px) {
-    width:78%;
     .account .tabs__controls--item {
         width: 40%
     }

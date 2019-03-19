@@ -8008,20 +8008,20 @@ body.account {
 	width: 30%;
 	padding: 30px
 }
-
 .account .tabs__item--address h4 {
 	font-size: 0;
 	color: #000;
 	font-weight: 400;
 	margin-bottom: 5px
 }
-
 .account .tabs__item--address h4:after {
 	content: "Os Meus Endere\00e7os";
 	font-size: 18px;
 	font-size: 1.125rem
 }
-
+.account .tabs__item--address .address-display-block.span6 {
+	width: 100%!important;
+}
 .account .tabs__item--address .new-address-link .address-update {
 	font-size: 0;
 	color: #3cdbc0;

@@ -22,7 +22,7 @@ $(document).ajaxSuccess(function(event,xhr,settings){
         $('.newsletter-label').attr('for', 'opt-in-newsletter');
         $('.newsletter-label > input').insertBefore($('.newsletter-label'));
     }
-    
+    $('#opt-in-newsletter').prop('checked',false);
     
 });
 $(document).on('click', '#go-to-shipping, #go-to-payment', function(){

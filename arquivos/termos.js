@@ -85,7 +85,7 @@ function autorizaNewsletter(idCheck,idBotao) {
         fonte.on('click', function(e){
             localidade(fonte);
         })
-        fonte.children().off('click');
+        fonte.children().not('.vtexIdUI-back-link').off('click');
         fonte.children().on('click', function(e){
             e.stopPropagation();
         })
@@ -96,7 +96,7 @@ function autorizaNewsletter(idCheck,idBotao) {
         $('#chk-error').remove();
         fonte.find('p').show();
         fonte.off('click');
-        fonte.children().off('click');
+        fonte.children().not('.vtexIdUI-back-link').off('click');
     }
     
 } 

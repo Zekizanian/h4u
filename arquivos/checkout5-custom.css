@@ -71,9 +71,13 @@ a:hover, a:focus{
   min-height: 100px;
 }
 
-.container-cart .cart-items .product-item.hide {
-  display: block;
+.container-cart .cart-items td.quantity {
+  font-size: 14px;
+  font-size: .875rem;
+  color: #000!important;
 }
+
+
 
 #termos, #newsletter-check {
     display: block;
@@ -231,12 +235,27 @@ table.cart-gift-items{
     position: static;
   }
   .new-product-price{
-    position: absolute;
     right: 20px;
     width: 100px;
     bottom: 18px;
   }
   .container-cart .cart-items td.item-remove .item-link-remove {
     padding-top: 0;
+  }
+  
+  .container-cart .cart-items .product-item.hide,.list-price {
+    display: block;
+  }
+  .list-price +br{
+    display: none!important;
+  }
+  .discount{
+    position: absolute;
+    bottom: 15px;
+    right: 100px;
+  }
+  .list-price.hide{
+    display: block!important;
+    visibility:hidden;
   }
 }

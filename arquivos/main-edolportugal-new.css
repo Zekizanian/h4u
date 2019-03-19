@@ -3407,6 +3407,9 @@ p.alert{
 #vtexIdContainer .vtexIdUI #vtexIdUI-email-confirmation .modal-body {
 	padding: 0 20px;
 }
+
+
+
 #vtexIdContainer .vtexIdUI .modal-body .info-why.muted {
 	margin-bottom:10px;
 }
@@ -3927,21 +3930,7 @@ p.alert{
 	font-weight: 700
 }
 
-@media screen and (max-width:736px) {
-	#vtexIdContainer .vtexIdUI {
-		width: 95%;
-		height: auto!important
-	}
-	#vtexIdContainer .vtexIdUI #vtexIdUI-auth-selector .modal-header .vtexIdUI-heading:before {
-		
-		font-size: 20px;
-		font-size: 1.25rem
-	}
-	#vtexIdContainer .vtexIdUI .modal-header .close {
-		right: 15px;
-		top: 16px
-	}
-}
+
 
 .image-zoom .zoomPad {
 	position: relative;
@@ -5308,6 +5297,44 @@ body div h2 {
 	}
 }
 
+
+
+@media screen and (min-width:737px) and (max-width:1024px) {
+	.footer .u-center {
+		padding-left: 30px;
+		padding-right: 30px
+	}
+	.footer .u-center hr {
+		display: none!important
+	}
+	.footer__box {
+		margin: 0;
+		padding: 20px
+	}
+	.footer__box:nth-child(1),
+	.footer__box:nth-child(2),
+	.footer__box:nth-child(3) {
+		width: 33%;
+		position: relative;
+		top: auto;
+		display: inline-block;
+		vertical-align: top
+	}
+	.footer__item--ebit {
+		margin-bottom: 10px
+	}
+	.footer__item--highlight:last-child {
+		font-size: 12px;
+		padding: 12px 5px
+	}
+	.footer__copyright .u-center {
+		text-align: center
+	}
+	.footer__copyright .sign {
+		position: inherit;
+		top: 10px
+	}
+}
 @media screen and (max-width:736px) {
 	.footer__box {
 		border-bottom: 1px solid #e5e5e5
@@ -5376,44 +5403,6 @@ body div h2 {
 	}
 
 }
-
-@media screen and (min-width:737px) and (max-width:1024px) {
-	.footer .u-center {
-		padding-left: 30px;
-		padding-right: 30px
-	}
-	.footer .u-center hr {
-		display: none!important
-	}
-	.footer__box {
-		margin: 0;
-		padding: 20px
-	}
-	.footer__box:nth-child(1),
-	.footer__box:nth-child(2),
-	.footer__box:nth-child(3) {
-		width: 33%;
-		position: relative;
-		top: auto;
-		display: inline-block;
-		vertical-align: top
-	}
-	.footer__item--ebit {
-		margin-bottom: 10px
-	}
-	.footer__item--highlight:last-child {
-		font-size: 12px;
-		padding: 12px 5px
-	}
-	.footer__copyright .u-center {
-		text-align: center
-	}
-	.footer__copyright .sign {
-		position: inherit;
-		top: 10px
-	}
-}
-
 #returnToTop {
 	display: none!important
 }
@@ -8075,6 +8064,9 @@ body.account {
 	font-size: .75rem;
 	margin-bottom: 20px
 }
+.account .tabs__item--address .address-display-unit .edit-address-link a {
+	color: #3cdbc0;
+}
 
 .account .tabs__item--address .address-display-unit .edit-address-link .address-update {
 	font-size: 0
@@ -8408,7 +8400,8 @@ body.account {
 	left: 0;
 	right: 0;
 	margin: auto;
-	z-index: 999
+	z-index: 999;
+	visibility: visible!important;
 }
 
 .account .control-label {
@@ -9252,6 +9245,9 @@ body.orders {
 .vtexid-password-requirements #termos {
 	margin-top: 10px;
 }
+.vtexIdUI {
+	overflow: auto!important;
+}
 .vtexIdUI .btn-success:hover,
 .vtexIdUI .btn-success:focus,
 .vtexIdUI .btn-success:active,
@@ -9306,7 +9302,7 @@ span[data-i18n='vtexid.confirmChangePswdText']:after{
 	content:"Receberá posteriormente por email um código de confirma\00e7ão";
 	font-size: 14px;
 }
-#chk-error{
+#chk-error span{
 	font-size:11px;
 	color: #cf6e6e;
 	line-height:1;
@@ -9315,4 +9311,26 @@ span[data-i18n='vtexid.confirmChangePswdText']:after{
 #modal-body + #chk-error {
 	width: 80%;
 	padding-left:15px;
+}
+
+.fa-angle-down:before,.fa-angle-up:before {
+	content: none!important;
+}
+@media screen and (max-width:736px) {
+	#vtexIdContainer .vtexIdUI .modal-body {
+		overflow-y:visible;
+	}
+	#vtexIdContainer .vtexIdUI {
+		width: 95%;
+		height: auto!important
+	}
+	#vtexIdContainer .vtexIdUI #vtexIdUI-auth-selector .modal-header .vtexIdUI-heading:before {
+		
+		font-size: 20px;
+		font-size: 1.25rem
+	}
+	#vtexIdContainer .vtexIdUI .modal-header .close {
+		right: 15px;
+		top: 16px
+	}
 }

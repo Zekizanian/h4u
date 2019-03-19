@@ -3,7 +3,7 @@ function newsletterNew(element) {
 	var emailValido=validaEmail(emailNews);
 	if(!emailValido){
         alert('Por favor, insira um email válido');
-    }else if ($('#aceito-termos').is(':checked')==false){
+    }else if ($('input[id^="aceito-termos"').is(':checked')==false){
         alert('Por favor leia e aceite as plíticas de privacidade');
 	}else{
 		$(element).find('#newsletterClientEmail, #newsletterButtonOK').hide();

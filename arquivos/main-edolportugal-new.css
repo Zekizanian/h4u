@@ -8170,7 +8170,7 @@ body.account {
 	top: 0;
 	left: 0;
 	display: none;
-	width: 100%;
+	width: 150%;
 	height: 100%;
 	z-index: 999;
 	cursor: pointer
@@ -8184,16 +8184,20 @@ body.account {
 	bottom: 0;
 	margin: auto;
 	width: 320px;
-	height: 200px;
+	height: 220px;
 	background-color: #fff;
-	padding: 30px;
+	padding: 10px;
 	z-index: 1000;
 	cursor: default
 }
 
+
 .account #address-edit .modal-footer,
 .account #address-remove .exclude .modal-footer {
 	padding-top: 10px
+}
+.account #address-remove .exclude .modal-footer{
+    background-color:#fff;
 }
 
 .account #address-remove .exclude .modal-header .address-label {
@@ -8201,7 +8205,7 @@ body.account {
 	font-size: 18px;
 	font-size: 1.125rem;
 	font-weight: 400;
-	margin-bottom: 25px
+	margin-bottom: 15px
 }
 
 .account #address-remove .exclude .modal-footer .btn-link,
@@ -8209,8 +8213,8 @@ body.account {
 	position: absolute;
 	bottom: 15px;
 	width: 120px;
-	height: 45px;
-	line-height: 45px;
+	height: 35px;
+	line-height: 35px;
 	text-align: center;
 	border: none;
 	text-shadow: none;
@@ -8229,7 +8233,8 @@ body.account {
 }
 
 .account #address-remove .exclude .modal-footer .btn-primary {
-	left: 166px
+    left: 166px;
+    line-height: 25px;
 }
 
 .account #address-remove .exclude .modal-footer .btn-primary:hover {

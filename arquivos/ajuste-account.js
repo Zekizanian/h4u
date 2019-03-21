@@ -32,10 +32,10 @@ $(document).ready(function(){
         $('#editar-perfil-conteudo').prependTo('.tabs__item--user-info');
         $('.form-contact-data-newsletter').appendTo('.profile-detail-form-contact-data');
         $('#address-edit, #address-remove').removeClass('fade');
-        $('.address-display-block').removeClass('span6');
+        $('.address-display-block').removeClass('span-6');
     }
-
 });
+
 function mudaPermicao(email, bool){
     $.ajax({
         url:"/api/dataentities/CL/documents",
@@ -49,4 +49,3 @@ function mudaPermicao(email, bool){
         })
     });
 }
-

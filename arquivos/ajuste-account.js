@@ -1,9 +1,9 @@
 $(document).ready(function(){
     $.get("/no-cache/profileSystem/getProfile", function(data){
-
+        console.log(data);
         if(data.IsUserDefined) {
             $.ajax({
-                url:'/api/dataentities/CL/search?_fields=email,privacyPolicyAgreed,isNewsletterOptIn&_where=email=' + data.Email ,
+                url:'/api/dataentities/CL/search?_fields=privacyPolicyAgreed,isNewsletterOptIn&_where=UserId=' + data.UserId ,
                 type:'GET'
             }).success(function(response){
                 console.log(response);
@@ -38,8 +38,9 @@ $(document).ready(function(){
 
 function mudaPermicao(email, bool){
     $.ajax({
-        url:"/api/dataentities/CL/documents",
-        type: "PATCH",
+        
+        url:"http://api.vtex.com/{AccountName}/dataentities/CL/documents",
+        type: "PUT",
         //"timeout": 0,
         accept: 'application/vnd.vtex.ds.v10+json',
         contentType: 'application/json; charset=utf-8',

@@ -14,8 +14,8 @@ function newsletterNew(element) {
             privacyPolicyAgreed:true
 		}
 		var settings = {
-			url:"/api/dataentities/CL/documents",
-			type: "PATCH",
+			url:"http://api.vtex.com/edolportugal/dataentities/CL/documents",
+			type: "PUT",
 			//"timeout": 0,
 			accept: 'application/vnd.vtex.ds.v10+json',
         	contentType: 'application/json; charset=utf-8',

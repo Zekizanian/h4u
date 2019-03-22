@@ -1,9 +1,10 @@
 $(document).ready(function(){
+    var clientEmail =''
     $.get("/no-cache/profileSystem/getProfile", function(data){
-        console.log(data);
+        clientEmail = data.Email;
         if(data.IsUserDefined) {
             $.ajax({
-                url:'/api/dataentities/CL/search?_fields=privacyPolicyAgreed,isNewsletterOptIn&_where=UserId=' + data.UserId ,
+                url:'/api/dataentities/CL/search?_fields=privacyPolicyAgreed,isNewsletterOptIn&_where=email=' + data.Email ,
                 type:'GET'
             }).success(function(response){
                 console.log(response);
@@ -21,7 +22,7 @@ $(document).ready(function(){
         }
     });
     
-    $(document).on('click', '#profile-submit',function(){
+    $(document).on('change', '.form-contact-data-newsletter input',function(){
         mudaPermicao(clientEmail ,$('label.radio .aceita').is(':checked'))
     });
 
@@ -39,8 +40,8 @@ $(document).ready(function(){
 function mudaPermicao(email, bool){
     $.ajax({
         
-        url:"http://api.vtex.com/{AccountName}/dataentities/CL/documents",
-        type: "PUT",
+        url:"http://api.vtex.com/edolportugal/dataentities/CL/documents",
+        type: "PATCH",
         //"timeout": 0,
         accept: 'application/vnd.vtex.ds.v10+json',
         contentType: 'application/json; charset=utf-8',

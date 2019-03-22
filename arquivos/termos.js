@@ -42,7 +42,7 @@ $(document).ajaxSuccess(function(event,xhr,options){
             if(response.authStatus == "Success"){
                 $.ajax({
                     url:"/api/dataentities/CL/documents",
-                    type: "PUT",
+                    type: "PATCH",
                     //"timeout": 0,
                     accept: 'application/vnd.vtex.ds.v10+json',
                     contentType: 'application/json; charset=utf-8',

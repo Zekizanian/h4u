@@ -4,7 +4,7 @@ function newsletterNew(element) {
 	if(!emailValido){
         alert('Por favor, insira um email válido');
     }else if ($('input[id^="aceito-termos"').is(':checked')==false){
-        alert('Por favor leia e aceite as plíticas de privacidade');
+        alert('Por favor leia e aceite as políticas de privacidade');
 	}else{
 		$(element).find('#newsletterClientEmail, #newsletterButtonOK').hide();
 		$(element).find('#newsletterLoading').show();
@@ -15,7 +15,7 @@ function newsletterNew(element) {
 		}
 		var settings = {
 			url:"http://api.vtex.com/edolportugal/dataentities/CL/documents",
-			type: "PUT",
+			type: "PATCH",
 			//"timeout": 0,
 			accept: 'application/vnd.vtex.ds.v10+json',
         	contentType: 'application/json; charset=utf-8',

@@ -30,7 +30,7 @@ $(document).on('click', '#go-to-shipping, #go-to-payment', function(){
         var clientEmail = $('p.client-profile-email span.email').text();
         $.ajax({
             url:"/api/dataentities/CL/documents",
-            type: "PUT",
+            type: "PATCH",
             //"timeout": 0,
             accept: 'application/vnd.vtex.ds.v10+json',
             contentType: 'application/json; charset=utf-8',
